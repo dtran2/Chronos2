@@ -1,5 +1,7 @@
 package ycpCS320;
 
 public class main {
-	System.Out.printf("Testing");
+	public main() {
+		System.out.printf("Testing");
+	}
 }
