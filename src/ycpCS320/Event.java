@@ -1,4 +1,9 @@
 package ycpCS320;
+import org.w3c.dom.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -33,6 +38,8 @@ public class Event {
 		
 		//Write the event information in "Events.xml"
 		try{
+			
+			/*
 			//Checks if directories leading to event exists
 			String directory = "/H:/git/Chronos/" + month + "-" + day + "-" + year +"/"
 					+ startTime + "-" + endTime + "/";
@@ -43,7 +50,8 @@ public class Event {
 			if (!createDir.exists()){
 				createDir.mkdirs();
 			}
-			
+			*/
+			String directory = "H:/git/Chronos/";
 			File event = new File(directory + "event.xml");
 			//Create a file called "event" in the directory if it doesn't already exist.
 			if(!event.exists()){
@@ -71,6 +79,6 @@ public class Event {
 		keyboard.close();
 	}
 	
-	
 
+	
 }
