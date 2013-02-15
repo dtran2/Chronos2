@@ -9,19 +9,52 @@ public class FakeDatabase implements IDatabase {
 	public FakeDatabase() {
 		nameToEventMap = new HashMap<String, Event>();
 		
-		//Event1 (Christmas)
-		Event e = new Event(12, 25, 2013, 1200, 2400, "Christmas");
-		e.setName("testevent");
-		nameToEventMap.put("testevent", e);
-		
-		Event e1 = new Event(1, 1, 2014, 1200, 2400, "New Years");
-		e.setName("New Years");
-		nameToEventMap.put("new years", e1);
+		createEvent("Christmas", 12, 25, 2013, 1200, 2400, "Christmas");
+		createEvent("New Years", 1, 1, 2014, 1200, 2400, "New Years day!");
+		createEvent("Thanksgiving", 11, 28, 2013, 1200, 2400, "turkey turkey turkey");
 	}
 
 	@Override
+	/**
+	 * Finds the specified event in the "nameToEventMap" Map
+	 * 
+	 */
 	public Event findEvent(String eventName) {
 		return nameToEventMap.get(eventName);
+	}
+	public int getMonth(String eventName){
+		return findEvent(eventName).getMonth();
+	}
+	public int getDay(String eventName){
+		return findEvent(eventName).getDay();
+	}
+	public int getYear(String eventName){
+		return findEvent(eventName).getYear();
+	}
+	public int getStartTime(String eventName){
+		return findEvent(eventName).getStartTime();
+	}
+	public int getEndTime(String eventName){
+		return findEvent(eventName).getEndTime();
+	}
+	public String getDetails(String eventName){
+		return findEvent(eventName).getDetails();
+	}
+	/**
+	 * Create an event
+	 * Add event to "nameToEventMap" Map
+	 * @param eventName 
+	 * @param month
+	 * @param day
+	 * @param year
+	 * @param startTime
+	 * @param endTime
+	 * @param details
+	 */
+	public void createEvent(String eventName, int month, int day, int year, int startTime, int endTime, String details){
+		Event e = new Event(month, day, year, startTime, endTime, details);
+		e.setName(eventName);
+		nameToEventMap.put(eventName, e);
 	}
 
 }
