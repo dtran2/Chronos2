@@ -5,18 +5,26 @@ import java.util.Map;
 
 public class FakeDatabase implements IDatabase {
 	private Map<String, Event> nameToEventMap;
+	private Map<String, Account> accountMap;
+	//Nested Maps to manage events of an account
+	private Map<Map<String, Account>, Map<String, Event>> accountToEventMap;
 	
 	public FakeDatabase() {
 		nameToEventMap = new HashMap<String, Event>();
+		accountMap = new HashMap<String, Account>();
 		
 		createEvent("Christmas", 12, 25, 2013, 1200, 2400, "Christmas");
 		createEvent("New Years", 1, 1, 2014, 1200, 2400, "New Years day!");
 		createEvent("Thanksgiving", 11, 28, 2013, 1200, 2400, "turkey turkey turkey");
+		
+		createAccount("Spongebob", "Squarepants");
+		createAccount("Patric", "Star");
+		createAccount("Sandy", "Cheeks");
 	}
 
 	@Override
 	/**
-	 * Finds the specified event in the "nameToEventMap" Map
+	 * Methods for handling event info.
 	 * 
 	 */
 	public Event findEvent(String eventName) {
@@ -56,5 +64,28 @@ public class FakeDatabase implements IDatabase {
 		e.setName(eventName);
 		nameToEventMap.put(eventName, e);
 	}
+	
+	/**
+	 * Methods for handling Account info.
+	 */
+	public void createAccount(String usr, String password){
+		Account a = new Account(usr, password);
+		accountMap.put(usr, a);	
+	}
+	/**
+	 * Method for verifying account username and password match.
+	 * @param usr
+	 * @param password
+	 * @return true if password matches with the account; false otherwise
+	 */
+	public boolean verifyAccount(String usr, String password){
+		if(accountMap.get(usr).getPassword() == password){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 
 }
