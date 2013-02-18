@@ -64,6 +64,14 @@ public class FakeDatabase implements IDatabase {
 		e.setName(eventName);
 		nameToEventMap.put(eventName, e);
 	}
+	public boolean isDupEvent(String eventName){
+		if(!nameToEventMap.containsKey(eventName)){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
 	
 	/**
 	 * Removes specified event from "nameToEventMap"
@@ -95,6 +103,15 @@ public class FakeDatabase implements IDatabase {
 		}
 		else{
 			return false;
+		}
+	}
+	
+	public boolean isDupAccount(String account){
+		if(!accountMap.containsKey(account)){
+			return false;
+		}
+		else{ 
+			return true;
 		}
 	}
 
