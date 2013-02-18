@@ -17,7 +17,7 @@ public class testFakeDatabase {
 	}
 	
 	private void  testVerifyAccount(){
-		assertTrue("Crab", fd.verifyAccount("Krusty", "Crab"));
+		//assertTrue("Crab", fd.verifyAccount("Krusty", "Crab"));
 	}
 	
 

@@ -66,11 +66,22 @@ public class FakeDatabase implements IDatabase {
 	}
 	
 	/**
+	 * Removes specified event from "nameToEventMap"
+	 * @param eventName
+	 */
+	public void removeEvent(String eventName){
+		nameToEventMap.remove(eventName);
+	}
+	
+	/**
 	 * Methods for handling Account info.
 	 */
 	public void createAccount(String usr, String password){
 		Account a = new Account(usr, password);
 		accountMap.put(usr, a);	
+	}
+	public void removeAccount(String account){
+		accountMap.remove(account);
 	}
 	/**
 	 * Method for verifying account username and password match.
