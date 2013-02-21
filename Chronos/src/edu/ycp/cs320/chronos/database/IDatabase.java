@@ -1,4 +1,4 @@
-package ycpCS320;
+package edu.ycp.cs320.chronos.database;
 
 public interface IDatabase {
 	
