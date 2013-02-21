@@ -10,6 +10,7 @@ public interface IDatabase {
 	public int getEndTime(String eventName);
 	public String getDetails(String eventName);
 	
-	public void createAccount(String usrName, String password);
+	public void createAccount(String usrName, String password, String email);
 	public boolean verifyAccount(String usrName, String password);
+
 }
