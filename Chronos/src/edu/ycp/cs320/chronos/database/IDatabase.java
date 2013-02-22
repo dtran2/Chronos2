@@ -1,4 +1,4 @@
-package ycpCS320;
+package edu.ycp.cs320.chronos.database;
 
 public interface IDatabase {
 	
@@ -12,5 +12,4 @@ public interface IDatabase {
 	
 	public void createAccount(String usrName, String password, String email);
 	public boolean verifyAccount(String usrName, String password);
-
 }

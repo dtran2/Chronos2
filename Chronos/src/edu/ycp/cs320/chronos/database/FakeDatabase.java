@@ -1,4 +1,4 @@
-package ycpCS320;
+package edu.ycp.cs320.chronos.database;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +17,9 @@ public class FakeDatabase implements IDatabase {
 		createEvent("New Years", 1, 1, 2014, 1200, 2400, "New Years day!");
 		createEvent("Thanksgiving", 11, 28, 2013, 1200, 2400, "turkey turkey turkey");
 		
-		createAccount("Spongebob", "Squarepants", "Spongebob@xyz.com");
-		createAccount("Patric", "Star", "Patric@xyz.com");
-		createAccount("Sandy", "Cheeks", "Sandy@xyz.com");
+		createAccount("Spongebob", "Squarepants", "x@y.z");
+		createAccount("Patric", "Star", "a@b.c");
+		createAccount("Sandy", "Cheeks", "q@r.s");
 	}
 
 	@Override
