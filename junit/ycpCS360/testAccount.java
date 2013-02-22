@@ -14,6 +14,7 @@ import ycpCS320.FakeDatabase;
 
 public class testAccount extends TestCase {
 	HashMap<String, Account> accountMap = new HashMap<String, Account>();
+	
 	private FakeDatabase fd;
 	public void setUp(){
 		fd = new FakeDatabase();
