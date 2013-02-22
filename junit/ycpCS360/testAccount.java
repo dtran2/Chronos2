@@ -25,7 +25,7 @@ public class testAccount extends TestCase {
 		assertEquals(true, accountMap.containsKey("Batman"));
 	}
 	private void testGetPassword(){
-		
+		//assertEquals(true, accountMap.)
 	}
 	private void testGetEmail(){
 		
