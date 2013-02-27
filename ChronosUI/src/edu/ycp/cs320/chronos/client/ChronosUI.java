@@ -17,6 +17,7 @@ public class ChronosUI implements EntryPoint{
 		email.setText("E-mail");
 		email.setName("email");
 		email.setAlignment(TextAlignment.CENTER);
+		pwd.setText("Password");
 
 		// TODO Auto-generated method stub
 		
