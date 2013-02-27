@@ -17,9 +17,9 @@ public class FakeDatabase implements IDatabase {
 		createEvent("New Years", 1, 1, 2014, 1200, 2400, "New Years day!");
 		createEvent("Thanksgiving", 11, 28, 2013, 1200, 2400, "turkey turkey turkey");
 		
-		createAccount("Spongebob", "Squarepants");
-		createAccount("Patric", "Star");
-		createAccount("Sandy", "Cheeks");
+		createAccount("Spongebob", "Squarepants", "x@y.z");
+		createAccount("Patric", "Star", "a@b.c");
+		createAccount("Sandy", "Cheeks", "q@r.s");
 	}
 
 	@Override
@@ -84,8 +84,8 @@ public class FakeDatabase implements IDatabase {
 	/**
 	 * Methods for handling Account info.
 	 */
-	public void createAccount(String usr, String password){
-		Account a = new Account(usr, password);
+	public void createAccount(String usr, String password, String email){
+		Account a = new Account(usr, password, email);
 		accountMap.put(usr, a);	
 	}
 	public void removeAccount(String account){

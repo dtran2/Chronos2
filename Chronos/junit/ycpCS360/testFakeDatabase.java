@@ -12,7 +12,7 @@ public class testFakeDatabase {
 		fd = new FakeDatabase();
 		
 		fd.createEvent("Test", 02, 17, 2013, 1223, 1000, "testEvent");
-		fd.createAccount("Krusty", "Crab");
+		fd.createAccount("Krusty", "Crab", "x@y.z");
 			
 	}
 	
