@@ -15,18 +15,23 @@ public class ChronosUI implements EntryPoint{
 	private Button signupButton;
 	private TextBox userName;
 	private PasswordTextBox password;
+	private TextBox userNamesignup;
+	private Button signupButtonsignup;
+	private PasswordTextBox passwordsignup;
+	private TextBox emailsignup;
 	@SuppressWarnings("deprecation")
 	@Override
 	
 	public void onModuleLoad() {
-		LayoutPanel layoutPanel = new LayoutPanel();
+		LayoutPanel loginPanel = new LayoutPanel();
+		LayoutPanel signUpPanel = new LayoutPanel();
 		
 		
 		// Location of Login Button
 		loginButton = new Button("Login!");
-		layoutPanel.add(loginButton);
-		layoutPanel.setWidgetLeftWidth(loginButton, 223.0, Unit.PX, 79.0, Unit.PX);
-		layoutPanel.setWidgetTopHeight(loginButton, 316.0, Unit.PX, 33.0, Unit.PX);
+		loginPanel.add(loginButton);
+		loginPanel.setWidgetLeftWidth(loginButton, 223.0, Unit.PX, 79.0, Unit.PX);
+		loginPanel.setWidgetTopHeight(loginButton, 316.0, Unit.PX, 33.0, Unit.PX);
 			
 			
 			// Handle if user clicks button
@@ -41,9 +46,9 @@ public class ChronosUI implements EntryPoint{
 		userName = new TextBox();
 		userName.setTextAlignment(TextBoxBase.ALIGN_CENTER);
 		userName.setText("Enter User Name");
-		layoutPanel.add(userName);
-		layoutPanel.setWidgetLeftWidth(userName, 177.0, Unit.PX, 170.0, Unit.PX);
-		layoutPanel.setWidgetTopHeight(userName, 238.0, Unit.PX, 33.0, Unit.PX);
+		loginPanel.add(userName);
+		loginPanel.setWidgetLeftWidth(userName, 177.0, Unit.PX, 170.0, Unit.PX);
+		loginPanel.setWidgetTopHeight(userName, 238.0, Unit.PX, 33.0, Unit.PX);
 			//userName.addKeyboardListener(new KeyboardListener() { 
 				// public void KeyboardListenter(String s) {
 			// }
@@ -52,11 +57,9 @@ public class ChronosUI implements EntryPoint{
 		
 		// Location of password textbox
 		password = new PasswordTextBox();
-		password.setTextAlignment(TextBoxBase.ALIGN_CENTER);
-		password.setText("Password");
-		layoutPanel.add(password);
-		layoutPanel.setWidgetLeftWidth(password, 202.0, Unit.PX, 125.0, Unit.PX);
-		layoutPanel.setWidgetTopHeight(password, 277.0, Unit.PX, 33.0, Unit.PX);
+		loginPanel.add(password);
+		loginPanel.setWidgetLeftWidth(password, 202.0, Unit.PX, 125.0, Unit.PX);
+		loginPanel.setWidgetTopHeight(password, 277.0, Unit.PX, 33.0, Unit.PX);
 			
 		// Handle password input
 			//userName.addKeyboardListener(new KeyboardListener() { 
@@ -66,9 +69,9 @@ public class ChronosUI implements EntryPoint{
 		
 		// Location of sign-up Button
 		signupButton = new Button("Sign Up NOW!");
-		layoutPanel.add(signupButton);
-		layoutPanel.setWidgetLeftWidth(signupButton, 378.0, Unit.PX, 137.0, Unit.PX);
-		layoutPanel.setWidgetTopHeight(signupButton, 10.0, Unit.PX, 28.0, Unit.PX);
+		loginPanel.add(signupButton);
+		loginPanel.setWidgetLeftWidth(signupButton, 378.0, Unit.PX, 137.0, Unit.PX);
+		loginPanel.setWidgetTopHeight(signupButton, 10.0, Unit.PX, 28.0, Unit.PX);
 		
 			// Handle is user clicks SignUp Button
 			signupButton.addClickHandler(new ClickHandler() {
@@ -77,9 +80,31 @@ public class ChronosUI implements EntryPoint{
 			}
 		});
 		
-		// TODO Auto-generated method stub
+		// Create signUp panel
 		
+		// Location of Sign-Up button
+		signupButtonsignup = new Button();
+		signUpPanel.add(signupButtonsignup);
+		signUpPanel.setWidgetLeftWidth(signupButtonsignup, 223.0, Unit.PX, 79.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(signupButtonsignup, 316.0, Unit.PX, 33.0, Unit.PX);
+		
+		
+		// Location of userName text box
+		userNamesignup = new TextBox();
+		signUpPanel.add(userNamesignup);
+		signUpPanel.setWidgetLeftWidth(userNamesignup, 177.0, Unit.PX, 170.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(userNamesignup, 238.0, Unit.PX, 33.0, Unit.PX);
+		
+		// Location of password text box
+		passwordsignup = new PasswordTextBox();
+		signUpPanel.add(passwordsignup);
+		
+		// Location of email text box
+		emailsignup = new TextBox();
+		signUpPanel.add(emailsignup);
+		signUpPanel.setWidgetLeftWidth(emailsignup, 202.0, Unit.PX, 125.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(emailsignup, 277.0, Unit.PX, 33.0, Unit.PX);
+		
+		// 
 	}
-
-	
 }
