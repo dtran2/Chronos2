@@ -5,8 +5,10 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
@@ -15,21 +17,32 @@ import edu.ycp.cs320.chronos.database.IDatabase;
 //import edu.ycp.cs320.chronos.database.FakeDatabase;
 
 public class ChronosUI implements EntryPoint{
-	private Button loginButton;
-	private Button signupButton;
-	private TextBox userName;
-	private PasswordTextBox password;
-	private TextBox userNamesignup;
-	private Button signupButtonsignup;
-	private PasswordTextBox passwordsignup;
-	private TextBox emailsignup;
-	private String passwordtext;
-	private String emailtext;
-	private String userNametext;
+//	private Button loginButton;
+//	private Button signupButton;
+//	private TextBox userName;
+//	private PasswordTextBox password;
+//	private TextBox userNamesignup;
+//	private Button signupButtonsignup;
+//	private PasswordTextBox passwordsignup;
+//	private TextBox emailsignup;
+//	private String passwordtext;
+//	private String emailtext;
+//	private String userNametext;
+	
+	
+	public static ChronosUI instance;
+	
+	private IsWidget currentView;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	
 	public void onModuleLoad() {
+		instance = this;
+		
+		setCurrentView(new LoginView());
+		
+		/*
 		final LayoutPanel loginPanel = new LayoutPanel();
 		LayoutPanel signUpPanel = new LayoutPanel();
 		
@@ -126,6 +139,18 @@ public class ChronosUI implements EntryPoint{
 					database.createAccount(userNametext, passwordtext, emailtext);
 				}
 			});	
-			
+			*/
+	}
+	
+	public void setCurrentView(IsWidget currentView) {
+		if (currentView != null) {
+			RootLayoutPanel.get().remove(currentView);
+		}
+		
+		
+		this.currentView = currentView;
+		RootLayoutPanel.get().add(currentView);
+		RootLayoutPanel.get().setWidgetTopBottom(currentView, 10.0, Unit.PX, 10.0, Unit.PX);
+		RootLayoutPanel.get().setWidgetLeftRight(currentView, 10.0, Unit.PX, 10.0, Unit.PX);
 	}
 }
