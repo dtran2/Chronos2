@@ -5,6 +5,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.KeyboardListener;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
@@ -42,10 +43,7 @@ public class LoginView extends Composite {
 		loginPanel.add(userName);
 		loginPanel.setWidgetLeftWidth(userName, 177.0, Unit.PX, 170.0, Unit.PX);
 		loginPanel.setWidgetTopHeight(userName, 238.0, Unit.PX, 33.0, Unit.PX);
-			//userName.addKeyboardListener(new KeyboardListener() { 
-				// public void KeyboardListenter(String s) {
-			// }
-			// });
+			
 		
 		
 		// Location of password textbox
@@ -54,11 +52,6 @@ public class LoginView extends Composite {
 		loginPanel.setWidgetLeftWidth(password, 202.0, Unit.PX, 125.0, Unit.PX);
 		loginPanel.setWidgetTopHeight(password, 277.0, Unit.PX, 33.0, Unit.PX);
 			
-		// Handle password input
-			//userName.addKeyboardListener(new KeyboardListener() { 
-			// public void KeyboardListenter(String s) {
-			// }
-			// });
 		
 	}
 }
