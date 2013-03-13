@@ -1,5 +1,6 @@
 package edu.ycp.cs320.chronos.client;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -60,13 +61,7 @@ public class SignUpView extends Composite {
 			// Sign up button 
 				signupButton.addClickHandler(new ClickHandler() {
 					public void onClick(ClickEvent event) {
-						// TODO: call an RPC method to add account 
-							// public static final  =
-								
-					
-						// createAccount(userNametext,passwordtext,emailtext);
-						IDatabase database = Database.getDatabase();
-						database.createAccount(userNametext, passwordtext, emailtext);
+						handleSignUpClick();
 					}
 				});	
 		
@@ -82,6 +77,29 @@ public class SignUpView extends Composite {
 	
 	public void update(){
 			
+	}
+	
+	/**
+	 * 
+	 * @author cdavis17
+	 * Method uses RPC to create Account when
+	 * user clicks on the Sign Up Button
+	 * 
+	 */
+	public void handleSignUpClick(){
+		RPC.database.getDatabase().createAccount(userNametext, passwordtext, emailtext);
+		
+		@Override
+		public void onSuccess(Boolean result) {
+			GWT.log("Successfully placed order!");
+			
+		}
+
+		@Override
+		public void onFailure(Throwable caught) {
+			GWT.log("RPC call failed", caught);s
+			// FIXME: should display error message in UI
+		}
 	}
 		
 }

@@ -1,6 +1,7 @@
 package edu.ycp.cs320.chronos.client;
 
 import com.google.gwt.dom.client.Style.Unit;
+import edu.ycp.cs320.chronos.client.SignUpView;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -31,7 +32,21 @@ public class LoginView extends Composite {
 			// Handle if user clicks button
 			loginButton.addClickHandler(new ClickHandler() {
 				public void onClick(ClickEvent event) {
-					// navigate to main panel
+					/**
+					 * 
+					 * 
+					 * 
+					 * 
+					 * 
+					 * Ask Dr. Hovemeyer about switching to New View
+					 * 
+					 * 
+					 * 
+					 * 
+					 * 
+					 * 
+					 */
+					// setCurrentView(SignUpView);
 				}
 			});
 				
