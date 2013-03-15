@@ -19,7 +19,7 @@ import edu.ycp.cs320.chronos.database.IDatabase;
 public class ChronosUI implements EntryPoint{
 
 	public static ChronosUI instance;
-	private IsWidget currentView;
+	private static IsWidget currentView;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -32,14 +32,14 @@ public class ChronosUI implements EntryPoint{
 		
 	}
 	
-	public void setCurrentView(IsWidget currentView) {
-		if (currentView != null) {
-			RootLayoutPanel.get().remove(currentView);
+	public static void setCurrentView(IsWidget cv) {
+		if (cv != null) {
+			RootLayoutPanel.get().remove(cv);
 		}
-		this.currentView = currentView;
-		RootLayoutPanel.get().add(currentView);
-		RootLayoutPanel.get().setWidgetTopBottom(currentView, 10.0, Unit.PX, 10.0, Unit.PX);
-		RootLayoutPanel.get().setWidgetLeftRight(currentView, 10.0, Unit.PX, 10.0, Unit.PX);
+		currentView = cv;
+		RootLayoutPanel.get().add(cv);
+		RootLayoutPanel.get().setWidgetTopBottom(cv, 10.0, Unit.PX, 10.0, Unit.PX);
+		RootLayoutPanel.get().setWidgetLeftRight(cv, 10.0, Unit.PX, 10.0, Unit.PX);
 	}
 	
 }
