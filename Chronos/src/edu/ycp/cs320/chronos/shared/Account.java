@@ -1,4 +1,4 @@
-package edu.ycp.cs320.chronos.database;
+package edu.ycp.cs320.chronos.shared;
 
 public class Account {
 	private String userName, password, emailAddress;

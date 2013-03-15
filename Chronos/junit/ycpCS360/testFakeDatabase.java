@@ -1,5 +1,5 @@
 package ycpCS360;
-import edu.ycp.cs320.chronos.database.FakeDatabase;
+import edu.ycp.cs320.chronos.shared.FakeDatabase;
 
 /**
  * Tests methods in Fakedatabase.java

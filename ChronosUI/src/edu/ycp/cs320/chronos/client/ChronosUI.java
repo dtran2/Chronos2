@@ -13,8 +13,8 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
-import edu.ycp.cs320.chronos.database.Database;
-import edu.ycp.cs320.chronos.database.IDatabase;
+import edu.ycp.cs320.chronos.shared.Database;
+import edu.ycp.cs320.chronos.shared.IDatabase;
 
 
 public class ChronosUI implements EntryPoint{
@@ -43,7 +43,7 @@ public class ChronosUI implements EntryPoint{
 		RootLayoutPanel.get().add(cv);
 		RootLayoutPanel.get().setWidgetTopBottom(cv, 10.0, Unit.PX, 10.0, Unit.PX);
 		RootLayoutPanel.get().setWidgetLeftRight(cv, 10.0, Unit.PX, 10.0, Unit.PX);
-		GWT.log("Set current view: " + cv.getClass().getSimpleName());
+		GWT.log("Set current view: " + cv.getClass().getName());
 	}
 	
 }

@@ -1,6 +1,6 @@
-package edu.ycp.cs320.chronos.database;
+package edu.ycp.cs320.chronos.shared;
 
-import edu.ycp.cs320.chronos.database.ISubscriber;
+import edu.ycp.cs320.chronos.shared.ISubscriber;
 
 
 public interface IPublisher {

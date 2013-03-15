@@ -1,4 +1,4 @@
-package edu.ycp.cs320.chronos.database;
+package edu.ycp.cs320.chronos.shared;
 
 import java.util.HashMap;
 import java.util.Map;

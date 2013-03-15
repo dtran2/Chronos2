@@ -12,10 +12,11 @@ import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
-import edu.ycp.cs320.chronos.database.Database;
-import edu.ycp.cs320.chronos.database.FakeDatabase;
-import edu.ycp.cs320.chronos.database.IDatabase;
-import edu.ycp.cs320.chronos.database.IPublisher;
+import edu.ycp.cs320.chronos.shared.Database;
+import edu.ycp.cs320.chronos.shared.FakeDatabase;
+import edu.ycp.cs320.chronos.shared.IDatabase;
+import edu.ycp.cs320.chronos.shared.IPublisher;
+
 import com.google.gwt.user.client.ui.Label;
 
 public class SignUpView extends Composite {

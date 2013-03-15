@@ -2,7 +2,7 @@ package edu.ycp.cs320.chronos.client;
 
 import com.google.gwt.dom.client.Style.Unit;
 import edu.ycp.cs320.chronos.client.SignUpView;
-import edu.ycp.cs320.chronos.database.FakeDatabase;
+import edu.ycp.cs320.chronos.shared.FakeDatabase;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
