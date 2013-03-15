@@ -13,57 +13,85 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
 import edu.ycp.cs320.chronos.database.Database;
+import edu.ycp.cs320.chronos.database.FakeDatabase;
 import edu.ycp.cs320.chronos.database.IDatabase;
 import edu.ycp.cs320.chronos.database.IPublisher;
+import com.google.gwt.user.client.ui.Label;
 
 public class SignUpView extends Composite {
-	private Button signupButton;
 	private TextBox userNamesignup;
 	private PasswordTextBox passwordsignup;
 	private TextBox emailsignup;
 	private String emailtext;
 	private String userNametext;
 	private String passwordtext;
-	
+	String emailText;
+	private FakeDatabase fakeDatabase = new FakeDatabase();
 	public SignUpView(){
 		
-		// Create signUp panel
 	final LayoutPanel signUpPanel = new LayoutPanel();
 	initWidget(signUpPanel);
 	signUpPanel.setSize("590px", "415px");
 	
-	// Location of userName text box
+	// Location of userName text box and label
+		Label lblUsername = new Label("Username");
+		signUpPanel.add(lblUsername);
+		signUpPanel.setWidgetLeftWidth(lblUsername, 86.0, Unit.PX, 83.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(lblUsername, 49.0, Unit.PX, 33.0, Unit.PX);
+	
 		userNamesignup = new TextBox();
 		signUpPanel.add(userNamesignup);
-		signUpPanel.setWidgetLeftWidth(userNamesignup, 185.0, Unit.PX, 160.0, Unit.PX);
-		signUpPanel.setWidgetTopHeight(userNamesignup, 225.0, Unit.PX, 33.0, Unit.PX);
+		signUpPanel.setWidgetLeftWidth(userNamesignup, 175.0, Unit.PX, 182.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(userNamesignup, 49.0, Unit.PX, 33.0, Unit.PX);
 		userNametext = userNamesignup.getText();
 			
-	// Location of password text box
+	// Location of password text box and label
+		Label lblPassword = new Label("Password");
+		signUpPanel.add(lblPassword);
+		signUpPanel.setWidgetLeftWidth(lblPassword, 86.0, Unit.PX, 83.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(lblPassword, 88.0, Unit.PX, 33.0, Unit.PX);
+		
 		passwordsignup = new PasswordTextBox();
 		signUpPanel.add(passwordsignup);
-		signUpPanel.setWidgetLeftWidth(passwordsignup, 195.0, Unit.PX, 130.0, Unit.PX);
-		signUpPanel.setWidgetTopHeight(passwordsignup, 264.0, Unit.PX, 33.0, Unit.PX);
+		signUpPanel.setWidgetLeftWidth(passwordsignup, 175.0, Unit.PX, 182.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(passwordsignup, 88.0, Unit.PX, 33.0, Unit.PX);
 		passwordtext = passwordsignup.getText();
 		
-	// Location of email text box
+	// Location of email text box and label
+		Label lblEmail = new Label("E-mail");
+		signUpPanel.add(lblEmail);
+		signUpPanel.setWidgetLeftWidth(lblEmail, 86.0, Unit.PX, 83.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(lblEmail, 127.0, Unit.PX, 33.0, Unit.PX);
+		
 		emailsignup = new TextBox();
 		signUpPanel.add(emailsignup);
 		signUpPanel.setWidgetLeftWidth(emailsignup, 175.0, Unit.PX, 182.0, Unit.PX);
-		signUpPanel.setWidgetTopHeight(emailsignup, 186.0, Unit.PX, 33.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(emailsignup, 127.0, Unit.PX, 33.0, Unit.PX);
+		emailText = emailsignup.getText();
+		
+		//Sign up button
+		Button signUp = new Button("Sign up!");
+		//Click handler: Add the new account to the database
+		//Send the user back to sign in panel to sign in to their new account
+		signUp.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				//TODO: Add the account to the key found in FakeDatabase
+				
+				//**********How do we sync the fakeDatabase????*****************
+				fakeDatabase.createAccount(userNametext, passwordtext, emailText);
+				
+			}
+		});
+		signUpPanel.add(signUp);
+		signUpPanel.setWidgetLeftWidth(signUp, 276.0, Unit.PX, 81.0, Unit.PX);
+		signUpPanel.setWidgetTopHeight(signUp, 166.0, Unit.PX, 30.0, Unit.PX);
 		emailtext = emailsignup.getText();
-			
-	// Location of Sign-Up button
-		signupButton = new Button();
-		signUpPanel.add(signupButton);
-		signUpPanel.setWidgetLeftWidth(signupButton, 223.0, Unit.PX, 79.0, Unit.PX);
-		signUpPanel.setWidgetTopHeight(signupButton, 316.0, Unit.PX, 33.0, Unit.PX);
-			// Sign up button 
-				signupButton.addClickHandler(new ClickHandler() {
-					public void onClick(ClickEvent event) {
-						handleSignUpClick();
-					}
-				});	
+		
+		
+		
+		
+		
+		
 		
 			
 				
@@ -78,28 +106,4 @@ public class SignUpView extends Composite {
 	public void update(){
 			
 	}
-	
-	/**
-	 * 
-	 * @author cdavis17
-	 * Method uses RPC to create Account when
-	 * user clicks on the Sign Up Button
-	 * 
-	 */
-	public void handleSignUpClick(){
-		RPC.database.getDatabase().createAccount(userNametext, passwordtext, emailtext);
-		
-		@Override
-		public void onSuccess(Boolean result) {
-			GWT.log("Successfully placed order!");
-			
-		}
-
-		@Override
-		public void onFailure(Throwable caught) {
-			GWT.log("RPC call failed", caught);s
-			// FIXME: should display error message in UI
-		}
-	}
-		
 }
