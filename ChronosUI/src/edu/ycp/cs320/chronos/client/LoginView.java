@@ -2,7 +2,6 @@ package edu.ycp.cs320.chronos.client;
 
 import com.google.gwt.dom.client.Style.Unit;
 import edu.ycp.cs320.chronos.client.SignUpView;
-import edu.ycp.cs320.chronos.shared.FakeDatabase;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -19,8 +18,6 @@ public class LoginView extends Composite {
 	private Button loginButton;
 	private TextBox userName;
 	private PasswordTextBox password;
-	private FakeDatabase fakeDatabase = new FakeDatabase();
-
 	public LoginView() {
 		final LayoutPanel loginPanel = new LayoutPanel();
 		initWidget(loginPanel);
@@ -37,7 +34,7 @@ public class LoginView extends Composite {
 			loginButton.addClickHandler(new ClickHandler() {
 				public void onClick(ClickEvent event) {
 					//Verify that the entered username and password is correct
-					boolean verify = fakeDatabase.verifyAccount(userName.getText(), password.getText());
+					boolean verify = ChronosUI.fakeDatabase.verifyAccount(userName.getText(), password.getText());
 					if(verify){
 						//Username and password is correct
 						//Send them to the main page

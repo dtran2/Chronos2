@@ -14,6 +14,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
 import edu.ycp.cs320.chronos.shared.Database;
+import edu.ycp.cs320.chronos.shared.FakeDatabase;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 
 
@@ -21,6 +22,7 @@ public class ChronosUI implements EntryPoint{
 
 	public static ChronosUI instance;
 	private static IsWidget currentView;
+	public static FakeDatabase fakeDatabase = new FakeDatabase();
 	
 	@SuppressWarnings("deprecation")
 	@Override
