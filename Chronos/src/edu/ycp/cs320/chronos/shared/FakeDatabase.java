@@ -1,5 +1,6 @@
 package edu.ycp.cs320.chronos.shared;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +28,13 @@ public class FakeDatabase implements IDatabase {
 	 * Methods for handling event info.
 	 * 
 	 */
+	
+	public Event getNextEvent(Account user){
+		ArrayList<Event> events = user.getEvents();
+		//Sift through the array list to find the next coming event
+		
+		
+	}
 	public Event findEvent(String eventName) {
 		return nameToEventMap.get(eventName);
 	}
@@ -47,6 +55,12 @@ public class FakeDatabase implements IDatabase {
 	}
 	public String getDetails(String eventName){
 		return findEvent(eventName).getDetails();
+	}
+	public Event getNextEvent(String account){
+		Event next;
+		
+		
+		return next;
 	}
 	/**
 	 * Create an event

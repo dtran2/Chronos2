@@ -81,6 +81,8 @@ public class SignUpView extends Composite {
 				//**********How do we sync the fakeDatabase????*****************
 				fakeDatabase.createAccount(userNametext, passwordtext, emailText);
 				
+				GWT.log("Account added");
+				
 			}
 		});
 		signUpPanel.add(signUp);
