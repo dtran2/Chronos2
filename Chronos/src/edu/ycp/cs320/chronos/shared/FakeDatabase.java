@@ -23,18 +23,31 @@ public class FakeDatabase implements IDatabase {
 		createAccount("Sandy", "Cheeks", "q@r.s");
 	}
 
-	@Override
+	//@Override
 	/**
 	 * Methods for handling event info.
 	 * 
 	 */
-	
-	public Event getNextEvent(Account user){
-		ArrayList<Event> events = user.getEvents();
+
+	/**
+	 * Sifts through an arraylist of today's events and returns the Event that will occur next
+	 * 
+	 *            Note: Replace current method of doing this with recursion
+	 */
+	public Event getNextEvent(Account user, int month, int day, int year){
+		ArrayList<Event> events = user.getTodaysEvents(month, day, year);
+		Event nextEvent = events.get(0); //Set the "nextEvent] to the first Event in the arrayList "events"
 		//Sift through the array list to find the next coming event
-		
-		
+		for(int i = 1; i < events.size(); i++){
+			//if the current "nextEvent"'s start time is greater, it is not the next event 
+			if(nextEvent.getStartTime() > events.get(i).getStartTime()){
+				nextEvent = events.get(i);
+			}
+		}
+		return nextEvent;
 	}
+		
+		
 	public Event findEvent(String eventName) {
 		return nameToEventMap.get(eventName);
 	}
@@ -56,12 +69,7 @@ public class FakeDatabase implements IDatabase {
 	public String getDetails(String eventName){
 		return findEvent(eventName).getDetails();
 	}
-	public Event getNextEvent(String account){
-		Event next;
-		
-		
-		return next;
-	}
+	
 	/**
 	 * Create an event
 	 * Add event to "nameToEventMap" Map

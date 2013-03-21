@@ -28,4 +28,26 @@ public class Account {
 	public ArrayList<Event> getEvents(){
 		return this.events;
 	}
+	/**
+	 * Sift through the entire arraylist of events 
+	 * to find the ones that will occur today
+	 * 
+	 * @param month
+	 * @param day
+	 * @param year
+	 * @return
+	 */
+	public ArrayList<Event> getTodaysEvents(int month, int day, int year){
+		ArrayList<Event> events = getEvents();
+		ArrayList<Event> todaysEvents = new ArrayList();
+		if(events == null){
+			//There are no events in the arraylist
+		}
+		for(int i = 0; i < events.size(); i++){
+			if(events.get(i).getMonth() == month && events.get(i).getDay() == day && events.get(i).getYear() == year){
+				todaysEvents.add(events.get(i));
+			}
+		}
+		return todaysEvents;
+	}
 }

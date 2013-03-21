@@ -11,5 +11,6 @@ public interface IDatabase {
 	public String getDetails(String eventName);
 	public void createAccount(String usrName, String password, String email);
 	public boolean verifyAccount(String usrName, String password);
+	Event getNextEvent(Account user, int month, int day, int year);
 	
 }
