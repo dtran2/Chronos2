@@ -1,4 +1,4 @@
-package edu.ycp.cs320.chronos.shared;
+package edu.ycp.cs320.chronos.modelClasses;
 import org.w3c.dom.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;

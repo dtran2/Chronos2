@@ -1,8 +1,10 @@
-package edu.ycp.cs320.chronos.shared;
+package edu.ycp.cs320.chronos.server;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import edu.ycp.cs320.chronos.shared.IDatabase;
 
 public class FakeDatabase implements IDatabase {
 	private Map<String, Event> nameToEventMap;
@@ -120,7 +122,11 @@ public class FakeDatabase implements IDatabase {
 	 * @return true if password matches with the account; false otherwise
 	 */
 	public boolean verifyAccount(String usr, String password){
-		if(accountMap.get(usr).getPassword() == password){
+		Account account = accountMap.get(usr);
+		if (account == null) {
+			return false;
+		}
+		if(account.getPassword().equals(password)){
 			return true;
 		}
 		else{

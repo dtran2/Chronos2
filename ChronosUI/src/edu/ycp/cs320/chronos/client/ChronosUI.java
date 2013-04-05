@@ -13,8 +13,8 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
+import edu.ycp.cs320.chronos.modelClasses.FakeDatabase;
 import edu.ycp.cs320.chronos.shared.Database;
-import edu.ycp.cs320.chronos.shared.FakeDatabase;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 
 

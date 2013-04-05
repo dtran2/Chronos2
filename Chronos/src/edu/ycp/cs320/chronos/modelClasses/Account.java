@@ -1,7 +1,8 @@
-package edu.ycp.cs320.chronos.shared;
+package edu.ycp.cs320.chronos.modelClasses;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Account {
 	private String userName, password, emailAddress;

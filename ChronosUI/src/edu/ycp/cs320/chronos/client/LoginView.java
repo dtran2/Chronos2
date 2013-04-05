@@ -1,10 +1,12 @@
 package edu.ycp.cs320.chronos.client;
 
+import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import edu.ycp.cs320.chronos.client.SignUpView;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.KeyboardListener;
@@ -33,21 +35,46 @@ public class LoginView extends Composite {
 			// Handle if user clicks button
 			loginButton.addClickHandler(new ClickHandler() {
 				public void onClick(ClickEvent event) {
-					//Verify that the entered username and password is correct
-					boolean verify = ChronosUI.fakeDatabase.verifyAccount(userName.getText(), password.getText());
-					if(verify){
-						//Username and password is correct
-						//Send them to the main page
-						ChronosUI.setCurrentView(new LoginView()); //currently sends to new loginView, change to mainView when made
-					}
-					else{
-						//Display an error message box under the login button 
-						Label error = new Label("The entered username and password did not match.");
-						loginPanel.add(error);
-						loginPanel.setWidgetLeftWidth(error, 177.0, Unit.PX, 170.0, Unit.PX);
-						loginPanel.setWidgetTopHeight(error, 358.0, Unit.PX, 57.0, Unit.PX);
-					}
-					// setCurrentView(SignUpView);
+//					//Verify that the entered username and password is correct
+//					boolean verify = ChronosUI.fakeDatabase.verifyAccount(userName.getText(), password.getText());
+//					if(verify){
+//						//Username and password is correct
+//						//Send them to the main page
+//						ChronosUI.setCurrentView(new LoginView()); //currently sends to new loginView, change to mainView when made
+//					}
+//					else{
+//						//Display an error message box under the login button 
+//						Label error = new Label("The entered username and password did not match.");
+//						loginPanel.add(error);
+//						loginPanel.setWidgetLeftWidth(error, 177.0, Unit.PX, 170.0, Unit.PX);
+//						loginPanel.setWidgetTopHeight(error, 358.0, Unit.PX, 57.0, Unit.PX);
+//					}
+//					// setCurrentView(SignUpView);
+					
+					RPC.accountManagementService.verifyAccount(userName.getText(), password.getText(), new AsyncCallback<Boolean>() {
+						@Override
+						public void onSuccess(Boolean result) {
+							if (result) {
+								// successful login
+								ChronosUI.setCurrentView(new mainView()); //currently sends to new loginView, change to mainView when made
+								// update UI
+								
+							} else {
+								// unsuccessful login
+								//Display an error message box under the login button 
+								Label error = new Label("The entered username and password did not match.");
+								loginPanel.add(error);
+								loginPanel.setWidgetLeftWidth(error, 177.0, Unit.PX, 170.0, Unit.PX);
+								loginPanel.setWidgetTopHeight(error, 358.0, Unit.PX, 57.0, Unit.PX);
+								
+							}
+						}
+						
+						@Override
+						public void onFailure(Throwable caught) {
+							GWT.log("RPC call to verify account failed", caught);
+						}
+					});
 				}
 			});
 				

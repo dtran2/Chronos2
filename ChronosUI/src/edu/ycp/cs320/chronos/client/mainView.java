@@ -1,11 +1,12 @@
 package edu.ycp.cs320.chronos.client;
 
+import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Label;
 
-public class mainView {
+public class mainView extends Composite{
 	private String nxtEvent;
 	public mainView(){
 		final LayoutPanel mainPanel = new LayoutPanel();
