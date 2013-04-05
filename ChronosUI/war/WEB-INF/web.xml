@@ -6,6 +6,14 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
+  <servlet>
+      <servlet-name>AccountManagementServiceImpl</servlet-name>
+      <servlet-class>edu.ycp.cs320.chronos.server.AccountManagementServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>AccountManagementServiceImpl</servlet-name>
+      <url-pattern>/chronosui/accountManagement</url-pattern>
+  </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
