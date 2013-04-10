@@ -1,4 +1,6 @@
-package edu.ycp.cs320.chronos.shared;
+/*package edu.ycp.cs320.chronos.shared;
+
+import edu.ycp.cs320.chronos.server.ChronosDatabase;
 
 
 
@@ -9,3 +11,4 @@ public class Database {
 		return instance;
 	}
 }
+*/

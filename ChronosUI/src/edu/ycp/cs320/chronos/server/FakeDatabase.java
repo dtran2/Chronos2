@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.ycp.cs320.chronos.modelClasses.Account;
+import edu.ycp.cs320.chronos.modelClasses.Event;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 
 public class FakeDatabase implements IDatabase {
