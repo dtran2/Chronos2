@@ -34,5 +34,7 @@ public class AccountManagementServiceImpl extends RemoteServiceServlet
 	public void createAccount(String usr, String password, String email){
 		DatabaseUtil.instance().createAccount(usr, password, email);
 	}
+	
+
 
 }
