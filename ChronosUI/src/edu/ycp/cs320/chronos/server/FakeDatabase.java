@@ -118,7 +118,7 @@ public class FakeDatabase implements IDatabase {
 		accountMap.remove(account);
 	}
 	/**
-	 * Method for verifying account username and password match.
+	 * Method for verifying account username and password.
 	 * @param usr
 	 * @param password
 	 * @return true if password matches with the account; false otherwise

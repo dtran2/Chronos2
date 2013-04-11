@@ -13,7 +13,6 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextBoxBase;
 
 import edu.ycp.cs320.chronos.modelClasses.FakeDatabase;
-import edu.ycp.cs320.chronos.shared.Database;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 import edu.ycp.cs320.chronos.shared.IPublisher;
 
@@ -27,7 +26,6 @@ public class SignUpView extends Composite {
 	private String userNametext;
 	private String passwordtext;
 	String emailText;
-	private FakeDatabase fakeDatabase = new FakeDatabase();
 	public SignUpView(){
 		
 	final LayoutPanel signUpPanel = new LayoutPanel();
@@ -79,8 +77,8 @@ public class SignUpView extends Composite {
 				//TODO: Add the account to the key found in FakeDatabase
 				
 				//**********How do we sync the fakeDatabase????*****************
-				fakeDatabase.createAccount(userNametext, passwordtext, emailText);
 				
+				RPC.accountManagementService.
 				GWT.log("Account added");
 				
 			}

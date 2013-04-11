@@ -31,9 +31,9 @@ public class mainView extends Composite{
 		
 		//Displays the user's upcoming event information
 		
-		Label lblNxtevnt = new Label("nxtEvnt");
+		Label lblNxtevnt = new Label(RPC.accountManagementService.);
 		mainPanel.add(lblNxtevnt);
-		mainPanel.setWidgetLeftWidth(lblNxtevnt, 113.0, Unit.PX, 240.0, Unit.PX);
-		mainPanel.setWidgetTopHeight(lblNxtevnt, 50.0, Unit.PX, 55.0, Unit.PX);
+		mainPanel.setWidgetLeftWidth(lblNxtevnt, 113.0, Unit.PX, 372.0, Unit.PX);
+		mainPanel.setWidgetTopHeight(lblNxtevnt, 50.0, Unit.PX, 57.0, Unit.PX);
 	}
 }
