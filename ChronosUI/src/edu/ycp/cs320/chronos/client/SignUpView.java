@@ -78,8 +78,24 @@ public class SignUpView extends Composite {
 				
 				//**********How do we sync the fakeDatabase????*****************
 				
-				RPC.accountManagementService.
-				GWT.log("Account added");
+				RPC.accountManagementService.createAccount(userNametext, passwordtext, emailText, new AsyncCallback<void>(){
+					//@Override
+					public void onSuccess(){
+						//The new account has been added to the database
+						//Give the user feedback on the success
+						//Change the view to LoginView to allow the user to log in with their newly created account
+						ChronosUI.setCurrentView(new LoginView());
+						//Notify GWT log of success
+						GWT.log("Account added");
+					}
+					//@Override
+					public void onFailure(Throwable caught){
+						GWT.log("RPC call to create and account failed: " caught);
+						
+					}
+					
+				});
+				
 				
 			}
 		});

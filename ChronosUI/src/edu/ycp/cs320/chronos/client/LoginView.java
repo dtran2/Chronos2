@@ -56,8 +56,8 @@ public class LoginView extends Composite {
 						public void onSuccess(Boolean result) {
 							if (result) {
 								// successful login
-								ChronosUI.setCurrentView(new mainView()); //currently sends to new loginView, change to mainView when made
-								// update UI
+								//Update view
+								ChronosUI.setCurrentView(new mainView()); 
 								
 							} else {
 								// unsuccessful login
@@ -72,7 +72,7 @@ public class LoginView extends Composite {
 						
 						@Override
 						public void onFailure(Throwable caught) {
-							GWT.log("RPC call to verify account failed", caught);
+							GWT.log("RPC call to verify account failed: ", caught);
 						}
 					});
 				}
