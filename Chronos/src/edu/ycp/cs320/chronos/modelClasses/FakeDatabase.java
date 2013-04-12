@@ -84,8 +84,7 @@ public class FakeDatabase implements IDatabase {
 	 * @param details
 	 */
 	public void createEvent(String eventName, int month, int day, int year, int startTime, int endTime, String details){
-		Event e = new Event(month, day, year, startTime, endTime, details);
-		e.setName(eventName);
+		Event e = new Event(month, day, year, startTime, endTime, details, eventName);
 		nameToEventMap.put(eventName, e);
 	}
 	public boolean isDupEvent(String eventName){
