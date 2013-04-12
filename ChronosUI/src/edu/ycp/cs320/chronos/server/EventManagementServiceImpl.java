@@ -70,7 +70,6 @@ public class EventManagementServiceImpl extends RemoteServiceServlet
 	public Event findEvent(String eventName) {
 		return DatabaseUtil.instance().findEvent(eventName);
 	}
-
 	@Override
 	/**
 	 * Takes the given eventName and uses the findEvent
