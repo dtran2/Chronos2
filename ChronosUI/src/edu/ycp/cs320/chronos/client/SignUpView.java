@@ -88,6 +88,7 @@ public class SignUpView extends Composite {
 						//Direct the user to the login view to login with their newly created account
 						GWT.log("Account added to database");
 						ChronosUI.setCurrentView(new LoginView());
+						//TODO: User cannot login with newly created account from the loginView, must fix
 					}
 				});
 			}
@@ -97,10 +98,8 @@ public class SignUpView extends Composite {
 		signUpPanel.setWidgetLeftWidth(signUp, 276.0, Unit.PX, 81.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(signUp, 166.0, Unit.PX, 30.0, Unit.PX);
 		emailtext = emailsignup.getText();
-			
-		
 				
-}
+	}
 
 	public void eventOccured(Object key, IPublisher publisher, Object hint){
 		update();
