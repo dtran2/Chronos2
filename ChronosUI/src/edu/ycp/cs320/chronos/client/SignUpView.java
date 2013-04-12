@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ButtonBase;
 import com.google.gwt.user.client.ui.Composite;
@@ -75,43 +76,28 @@ public class SignUpView extends Composite {
 		signUp.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				//TODO: Add the account to the key found in FakeDatabase
-				
-				//**********How do we sync the fakeDatabase????*****************
-				
-				RPC.accountManagementService.createAccount(userNametext, passwordtext, emailText, new AsyncCallback<void>(){
-					//@Override
-					public void onSuccess(){
+				RPC.accountManagementService.createAccount(userNametext, passwordtext, emailText, new AsyncCallback<Void>() {
+					@Override
+					public void onFailure(Throwable caught) {
+						GWT.log("RPC call to verify account failed: ", caught);
+					}
+
+					@Override
+					public void onSuccess(Void result) {
 						//The new account has been added to the database
-						//Give the user feedback on the success
-						//Change the view to LoginView to allow the user to log in with their newly created account
+						//Direct the user to the login view to login with their newly created account
+						GWT.log("Account added to database");
 						ChronosUI.setCurrentView(new LoginView());
-						//Notify GWT log of success
-						GWT.log("Account added");
 					}
-					//@Override
-					public void onFailure(Throwable caught){
-						GWT.log("RPC call to create and account failed: " caught);
-						
-					}
-					
 				});
-				
-				
 			}
 		});
+				
 		signUpPanel.add(signUp);
 		signUpPanel.setWidgetLeftWidth(signUp, 276.0, Unit.PX, 81.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(signUp, 166.0, Unit.PX, 30.0, Unit.PX);
 		emailtext = emailsignup.getText();
-		
-		
-		
-		
-		
-		
-		
 			
-				
 		
 				
 }
