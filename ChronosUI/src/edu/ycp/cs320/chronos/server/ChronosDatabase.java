@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import edu.ycp.cs320.chronos.modelClasses.Account;
-import edu.ycp.cs320.chronos.modelClasses.Event;
+import edu.ycp.cs320.chronos.shared.Account;
+import edu.ycp.cs320.chronos.shared.Event;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 
 //import edu.ycp.cs320.pizza.server.DerbyDatabase.DatabaseConnection;

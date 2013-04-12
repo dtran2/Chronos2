@@ -33,16 +33,18 @@ public class mainView extends Composite{
 		
 		//Displays the user's upcoming event information
 		
-		Label lblNxtevnt = new Label("Next event");
+		Label lblNxtevnt = new Label("Next Event");
 		mainPanel.add(lblNxtevnt);
 		mainPanel.setWidgetLeftWidth(lblNxtevnt, 113.0, Unit.PX, 372.0, Unit.PX);
 		mainPanel.setWidgetTopHeight(lblNxtevnt, 50.0, Unit.PX, 57.0, Unit.PX);
-
+		/*
 		//Layout panel for creating a new event
 		LayoutPanel createEventPanel = new LayoutPanel();
 		mainPanel.add(createEventPanel);
 		mainPanel.setWidgetLeftWidth(createEventPanel, 84.0, Unit.PX, 481.0, Unit.PX);
 		mainPanel.setWidgetTopHeight(createEventPanel, 116.0, Unit.PX, 328.0, Unit.PX);
+		*/
 		
+		initWidget(mainPanel);
 	}
 }

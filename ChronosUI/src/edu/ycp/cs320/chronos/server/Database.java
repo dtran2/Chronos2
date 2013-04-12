@@ -9,8 +9,8 @@ import java.util.Map;
 import com.google.gwt.dev.util.collect.HashMap;
 import com.sun.corba.se.pept.transport.Connection;
 
-import edu.ycp.cs320.chronos.modelClasses.Account;
-import edu.ycp.cs320.chronos.modelClasses.Event;
+import edu.ycp.cs320.chronos.shared.Account;
+import edu.ycp.cs320.chronos.shared.Event;
 import edu.ycp.cs320.chronos.shared.IDatabase;
 
 public class Database /*implements IDatabase*/ {

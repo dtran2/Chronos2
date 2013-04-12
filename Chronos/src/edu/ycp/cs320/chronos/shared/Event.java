@@ -1,17 +1,8 @@
-package edu.ycp.cs320.chronos.modelClasses;
-import org.w3c.dom.*;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
+package edu.ycp.cs320.chronos.shared;
+import java.io.Serializable;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-
-public class Event {
+public class Event implements Serializable {
+	private static final long serialVersionUID = 1L;
 		private int month;
 		private int day;
 		private int year;
@@ -19,6 +10,11 @@ public class Event {
 		private int endTime;
 		private String details;
 		private String eventName;
+		
+	public Event() {
+		
+	}
+		
 	public Event(int m, int d, int y, int st, int et, String de, String name){
 		this.month = m;
 		this.day = d;

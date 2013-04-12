@@ -2,8 +2,8 @@ package edu.ycp.cs320.chronos.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import edu.ycp.cs320.chronos.modelClasses.Account;
-import edu.ycp.cs320.chronos.modelClasses.Event;
+import edu.ycp.cs320.chronos.shared.Account;
+import edu.ycp.cs320.chronos.shared.Event;
 
 public interface EventManagementServiceAsync {
 

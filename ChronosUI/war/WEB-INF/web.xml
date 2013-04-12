@@ -17,7 +17,14 @@
       <url-pattern>/chronosui/accountManagement</url-pattern>     
   </servlet-mapping>
   
-
+  <servlet>
+    <servlet-name>EventManagementServiceImpl</servlet-name>
+    <servlet-class>edu.ycp.cs320.chronos.server.EventManagementServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EventManagementServiceImpl</servlet-name>
+    <url-pattern>/chronosui/eventManagement</url-pattern>
+  </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>

@@ -1,8 +1,5 @@
 package edu.ycp.cs320.chronos.shared;
 
-import edu.ycp.cs320.chronos.modelClasses.Account;
-import edu.ycp.cs320.chronos.modelClasses.Event;
-
 public interface IDatabase {
 	Event getNextEvent(Account user, int month, int day, int year);
 	public Event findEvent(String eventName);

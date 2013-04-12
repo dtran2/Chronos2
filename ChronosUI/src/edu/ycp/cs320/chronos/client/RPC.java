@@ -6,5 +6,5 @@ public class RPC {
 	public static final AccountManagementServiceAsync accountManagementService =
 			GWT.create(AccountManagementService.class);
 	public static final EventManagementServiceAsync eventManagementService =
-			GWT.create(EventManagementService.class);
+			/*GWT.create(EventManagementService.class)*/null;
 }

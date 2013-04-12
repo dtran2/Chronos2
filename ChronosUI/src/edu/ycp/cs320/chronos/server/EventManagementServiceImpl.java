@@ -2,8 +2,8 @@ package edu.ycp.cs320.chronos.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import edu.ycp.cs320.chronos.client.EventManagementService;
-import edu.ycp.cs320.chronos.modelClasses.Account;
-import edu.ycp.cs320.chronos.modelClasses.Event;
+import edu.ycp.cs320.chronos.shared.Account;
+import edu.ycp.cs320.chronos.shared.Event;
 
 /**
  * RemoteService that allows the user to access all event

@@ -3,9 +3,12 @@ package edu.ycp.cs320.chronos.client;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+import edu.ycp.cs320.chronos.shared.Account;
+import edu.ycp.cs320.chronos.shared.Event;
+/*
 import edu.ycp.cs320.chronos.modelClasses.Account;
 import edu.ycp.cs320.chronos.modelClasses.Event;
-
+*/
 @RemoteServiceRelativePath("eventManagement")
 public interface EventManagementService extends RemoteService {
 

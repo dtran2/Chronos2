@@ -34,23 +34,7 @@ public class LoginView extends Composite {
 			
 			// Handle if user clicks button
 			loginButton.addClickHandler(new ClickHandler() {
-				public void onClick(ClickEvent event) {
-//					//Verify that the entered username and password is correct
-//					boolean verify = ChronosUI.fakeDatabase.verifyAccount(userName.getText(), password.getText());
-//					if(verify){
-//						//Username and password is correct
-//						//Send them to the main page
-//						ChronosUI.setCurrentView(new LoginView()); //currently sends to new loginView, change to mainView when made
-//					}
-//					else{
-//						//Display an error message box under the login button 
-//						Label error = new Label("The entered username and password did not match.");
-//						loginPanel.add(error);
-//						loginPanel.setWidgetLeftWidth(error, 177.0, Unit.PX, 170.0, Unit.PX);
-//						loginPanel.setWidgetTopHeight(error, 358.0, Unit.PX, 57.0, Unit.PX);
-//					}
-//					// setCurrentView(SignUpView);
-					
+				public void onClick(ClickEvent event) {					
 					RPC.accountManagementService.verifyAccount(userName.getText(), password.getText(), new AsyncCallback<Boolean>() {
 						@Override
 						public void onSuccess(Boolean result) {

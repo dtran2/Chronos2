@@ -6,18 +6,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.ButtonBase;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.TextBoxBase;
 
-import edu.ycp.cs320.chronos.modelClasses.FakeDatabase;
-import edu.ycp.cs320.chronos.shared.IDatabase;
 import edu.ycp.cs320.chronos.shared.IPublisher;
-
-import com.google.gwt.user.client.ui.Label;
 
 public class SignUpView extends Composite {
 	private TextBox userNamesignup;
