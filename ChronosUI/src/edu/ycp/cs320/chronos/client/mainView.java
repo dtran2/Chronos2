@@ -31,9 +31,10 @@ public class mainView extends Composite{
 		
 		//Displays the user's upcoming event information
 		
-		Label lblNxtevnt = new Label(RPC.accountManagementService.);
+		Label lblNxtevnt = new Label(TODO: Fetch the next event after EventManagementService has been fully implemented: RPC.EventManagementService.getNextEvent() );
 		mainPanel.add(lblNxtevnt);
 		mainPanel.setWidgetLeftWidth(lblNxtevnt, 113.0, Unit.PX, 372.0, Unit.PX);
 		mainPanel.setWidgetTopHeight(lblNxtevnt, 50.0, Unit.PX, 57.0, Unit.PX);
+		
 	}
 }

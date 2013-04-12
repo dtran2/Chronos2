@@ -86,7 +86,7 @@ public class FakeDatabase implements IDatabase {
 	 * @param details
 	 */
 	public void createEvent(String eventName, int month, int day, int year, int startTime, int endTime, String details){
-		Event e = new Event(month, day, year, startTime, endTime, details);
+		Event e = new Event(month, day, year, startTime, endTime, details, eventName);
 		e.setName(eventName);
 		nameToEventMap.put(eventName, e);
 	}

@@ -94,7 +94,7 @@ public class ChronosDatabase implements IDatabase {
 					
 					stmt.executeUpdate();
 				} finally {
-					DBUtil.closeQuietly(stmt);
+					//DBUtil.closeQuietly(stmt);
 				}
 				
 				return true;
@@ -168,6 +168,37 @@ public class ChronosDatabase implements IDatabase {
 	public Event getNextEvent(Account user, int month, int day, int year) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void createEvent(String eventName, int month, int day, int year,
+			int startTime, int endTime, String details) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isDupEvent(String eventName) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void removeEvent(String eventName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeAccount(String account) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isDupAccount(String account) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
