@@ -19,13 +19,14 @@ public class Event {
 		private int endTime;
 		private String details;
 		private String eventName;
-	public Event(int m, int d, int y, int st, int et, String de){
+	public Event(int m, int d, int y, int st, int et, String de, String name){
 		this.month = m;
 		this.day = d;
 		this.year = y;
 		this.startTime = st;
 		this.endTime = et;
 		this.details = de;
+		this.eventName = name;
 	}
 	public int getMonth(){
 		return month;
@@ -47,6 +48,9 @@ public class Event {
 	}
 	public void setName(String name){
 		this.eventName = name;
+	}
+	public String getName(){
+		return eventName;
 	}
 	
 	
