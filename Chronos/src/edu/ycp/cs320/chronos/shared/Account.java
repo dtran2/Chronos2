@@ -2,14 +2,17 @@ package edu.ycp.cs320.chronos.shared;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-
 
 public class Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private String userName, password, emailAddress;
 	private ArrayList<Event> events;
+	
+	public Account() {
+		
+	}
+	
 	public Account(String usr, String pwd, String email){
 		this.userName = usr;
 		this.password = pwd;

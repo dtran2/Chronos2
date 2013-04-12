@@ -18,10 +18,10 @@ public class SignUpView extends Composite {
 	private TextBox userNamesignup;
 	private PasswordTextBox passwordsignup;
 	private TextBox emailsignup;
-	private String emailtext;
-	private String userNametext;
-	private String passwordtext;
-	String emailText;
+	//private String emailtext;
+	//private String userNametext;
+	//private String passwordtext;
+	//String emailText;
 	public SignUpView(){
 		
 	final LayoutPanel signUpPanel = new LayoutPanel();
@@ -38,7 +38,7 @@ public class SignUpView extends Composite {
 		signUpPanel.add(userNamesignup);
 		signUpPanel.setWidgetLeftWidth(userNamesignup, 175.0, Unit.PX, 182.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(userNamesignup, 49.0, Unit.PX, 33.0, Unit.PX);
-		userNametext = userNamesignup.getText();
+		//userNametext = userNamesignup.getText();
 			
 	// Location of password text box and label
 		Label lblPassword = new Label("Password");
@@ -50,7 +50,7 @@ public class SignUpView extends Composite {
 		signUpPanel.add(passwordsignup);
 		signUpPanel.setWidgetLeftWidth(passwordsignup, 175.0, Unit.PX, 182.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(passwordsignup, 88.0, Unit.PX, 33.0, Unit.PX);
-		passwordtext = passwordsignup.getText();
+		//passwordtext = passwordsignup.getText();
 		
 	// Location of email text box and label
 		Label lblEmail = new Label("E-mail");
@@ -62,7 +62,7 @@ public class SignUpView extends Composite {
 		signUpPanel.add(emailsignup);
 		signUpPanel.setWidgetLeftWidth(emailsignup, 175.0, Unit.PX, 182.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(emailsignup, 127.0, Unit.PX, 33.0, Unit.PX);
-		emailText = emailsignup.getText();
+		//emailText = emailsignup.getText();
 		
 		//Sign up button
 		Button signUp = new Button("Sign up!");
@@ -71,10 +71,10 @@ public class SignUpView extends Composite {
 		signUp.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				//TODO: Add the account to the key found in FakeDatabase
-				RPC.accountManagementService.createAccount(userNametext, passwordtext, emailText, new AsyncCallback<Void>() {
+				RPC.accountManagementService.createAccount(userNamesignup.getText(), passwordsignup.getText(), emailsignup.getText(), new AsyncCallback<Void>() {
 					@Override
 					public void onFailure(Throwable caught) {
-						GWT.log("RPC call to verify account failed: ", caught);
+						GWT.log("RPC call to create account failed: ", caught);
 					}
 
 					@Override
@@ -92,7 +92,7 @@ public class SignUpView extends Composite {
 		signUpPanel.add(signUp);
 		signUpPanel.setWidgetLeftWidth(signUp, 276.0, Unit.PX, 81.0, Unit.PX);
 		signUpPanel.setWidgetTopHeight(signUp, 166.0, Unit.PX, 30.0, Unit.PX);
-		emailtext = emailsignup.getText();
+		//emailtext = emailsignup.getText();
 				
 	}
 

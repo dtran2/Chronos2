@@ -111,7 +111,9 @@ public class FakeDatabase implements IDatabase {
 	 * Methods for handling Account info.
 	 */
 	public void createAccount(String usr, String password, String email){
+		System.out.println("Creating account for user=" + usr + ", pass=" + password);
 		Account a = new Account(usr, password, email);
+		System.out.println("Account password: " + a.getPassword());
 		accountMap.put(usr, a);	
 	}
 	public void removeAccount(String account){
@@ -126,12 +128,14 @@ public class FakeDatabase implements IDatabase {
 	public boolean verifyAccount(String usr, String password){
 		Account account = accountMap.get(usr);
 		if (account == null) {
+			System.out.println("No such account: " + usr);
 			return false;
 		}
 		if(account.getPassword().equals(password)){
 			return true;
 		}
 		else{
+			System.out.println("Password does not match");
 			return false;
 		}
 	}
