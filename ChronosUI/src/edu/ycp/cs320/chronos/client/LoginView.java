@@ -34,7 +34,7 @@ public class LoginView extends Composite {
 			
 			// Handle if user clicks button
 			loginButton.addClickHandler(new ClickHandler() {
-				public void onClick(ClickEvent event) {					
+				public void onClick(ClickEvent event) {
 					RPC.accountManagementService.verifyAccount(userName.getText(), password.getText(), new AsyncCallback<Boolean>() {
 						@Override
 						public void onSuccess(Boolean result) {
