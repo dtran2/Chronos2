@@ -46,13 +46,17 @@ public class mainView extends Composite{
 		mainPanel.add(nextEvent);
 		mainPanel.setWidgetLeftWidth(nextEvent, 113.0, Unit.PX, 372.0, Unit.PX);
 		mainPanel.setWidgetTopHeight(nextEvent, 50.0, Unit.PX, 57.0, Unit.PX);
-		/*
+		
+		
+		
 		//Layout panel for creating a new event
+		//This layout panel is intended to pop up on top of the mainView
+		//Must add this part to the onClickhandler under Create Event
 		LayoutPanel createEventPanel = new LayoutPanel();
 		mainPanel.add(createEventPanel);
-		mainPanel.setWidgetLeftWidth(createEventPanel, 84.0, Unit.PX, 481.0, Unit.PX);
-		mainPanel.setWidgetTopHeight(createEventPanel, 116.0, Unit.PX, 328.0, Unit.PX);
-		*/
+		mainPanel.setWidgetLeftWidth(createEventPanel, 87.0, Unit.PX, 481.0, Unit.PX);
+		mainPanel.setWidgetTopHeight(createEventPanel, 73.0, Unit.PX, 328.0, Unit.PX);
+		
 		
 		initWidget(mainPanel);
 	}
