@@ -43,7 +43,6 @@ public class mainView extends Composite{
 		mainPanel.setWidgetTopHeight(btnCalendar, 123.0, Unit.PX, 30.0, Unit.PX);
 		
 		//Displays the user's upcoming event information
-		
 		Label nextEvent = new Label("Next Event");
 		mainPanel.add(nextEvent);
 		mainPanel.setWidgetLeftWidth(nextEvent, 113.0, Unit.PX, 372.0, Unit.PX);
@@ -52,52 +51,61 @@ public class mainView extends Composite{
 		
 		
 		//Layout panel for creating a new event
-		//This layout panel is intended to pop up on top of the mainView
-		//Must add this part to the onClickhandler under Create Event
-		LayoutPanel createEventPanel = new LayoutPanel();
-		mainPanel.add(createEventPanel);
-		mainPanel.setWidgetLeftWidth(createEventPanel, 87.0, Unit.PX, 481.0, Unit.PX);
-		mainPanel.setWidgetTopHeight(createEventPanel, 73.0, Unit.PX, 328.0, Unit.PX);
-		
+		final LayoutPanel createEventPanel = new LayoutPanel();
 		createEvent.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 					
 					// Code for layout panel when user clicks CreateEvent
-					LayoutPanel layoutPanel = new LayoutPanel();
-					mainPanel.add(layoutPanel);
-					mainPanel.setWidgetLeftWidth(layoutPanel, 123.0, Unit.PX, 503.0, Unit.PX);
-					mainPanel.setWidgetTopHeight(layoutPanel, 111.0, Unit.PX, 358.0, Unit.PX);
+					mainPanel.add(createEventPanel);
+					mainPanel.setWidgetLeftWidth(createEventPanel, 123.0, Unit.PX, 503.0, Unit.PX);
+					mainPanel.setWidgetTopHeight(createEventPanel, 111.0, Unit.PX, 358.0, Unit.PX);
 					
 					TextBox eventName = new TextBox();
-					layoutPanel.add(eventName);
-					layoutPanel.setWidgetLeftWidth(eventName, 38.0, Unit.PX, 174.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(eventName, 50.0, Unit.PX, 31.0, Unit.PX);
+					createEventPanel.add(eventName);
+					createEventPanel.setWidgetLeftWidth(eventName, 38.0, Unit.PX, 174.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(eventName, 50.0, Unit.PX, 31.0, Unit.PX);
 					
 					DatePicker datePicker = new DatePicker();
-					layoutPanel.add(datePicker);
-					layoutPanel.setWidgetLeftWidth(datePicker, 267.0, Unit.PX, 191.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(datePicker, 49.0, Unit.PX, 191.0, Unit.PX);
+					createEventPanel.add(datePicker);
+					createEventPanel.setWidgetLeftWidth(datePicker, 267.0, Unit.PX, 191.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(datePicker, 49.0, Unit.PX, 191.0, Unit.PX);
 					
 					TextBox eventStartTime = new TextBox();
-					layoutPanel.add(eventStartTime);
-					layoutPanel.setWidgetLeftWidth(eventStartTime, 38.0, Unit.PX, 111.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(eventStartTime, 100.0, Unit.PX, 31.0, Unit.PX);
+					createEventPanel.add(eventStartTime);
+					createEventPanel.setWidgetLeftWidth(eventStartTime, 38.0, Unit.PX, 111.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(eventStartTime, 100.0, Unit.PX, 31.0, Unit.PX);
 					
 					TextBox eventEndTime = new TextBox();
-					layoutPanel.add(eventEndTime);
-					layoutPanel.setWidgetLeftWidth(eventEndTime, 38.0, Unit.PX, 111.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(eventEndTime, 154.0, Unit.PX, 31.0, Unit.PX);
+					createEventPanel.add(eventEndTime);
+					createEventPanel.setWidgetLeftWidth(eventEndTime, 38.0, Unit.PX, 111.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(eventEndTime, 154.0, Unit.PX, 31.0, Unit.PX);
 					
 					TextArea eventDetails = new TextArea();
-					layoutPanel.add(eventDetails);
-					layoutPanel.setWidgetLeftWidth(eventDetails, 38.0, Unit.PX, 191.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(eventDetails, 214.0, Unit.PX, 130.0, Unit.PX);
+					createEventPanel.add(eventDetails);
+					createEventPanel.setWidgetLeftWidth(eventDetails, 38.0, Unit.PX, 191.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(eventDetails, 214.0, Unit.PX, 130.0, Unit.PX);
 					
 					Button btnAddEvent = new Button("New button");
 					btnAddEvent.setText("Add Event to Calendar");
-					layoutPanel.add(btnAddEvent);
-					layoutPanel.setWidgetLeftWidth(btnAddEvent, 267.0, Unit.PX, 191.0, Unit.PX);
-					layoutPanel.setWidgetTopHeight(btnAddEvent, 286.0, Unit.PX, 40.0, Unit.PX);
+					createEventPanel.add(btnAddEvent);
+					createEventPanel.setWidgetLeftWidth(btnAddEvent, 267.0, Unit.PX, 191.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(btnAddEvent, 286.0, Unit.PX, 40.0, Unit.PX);
+					btnAddEvent.addClickHandler(new ClickHandler() {
+						public void onClick(ClickEvent event) {
+							createEventPanel.clear();
+						}
+					});
+					
+					// Clears the layout Panel if user decides not to create event
+					Button btnClose = new Button("Close");
+					createEventPanel.add(btnClose);
+					createEventPanel.setWidgetLeftWidth(btnClose, 167.0, Unit.PX, 91.0, Unit.PX);
+					createEventPanel.setWidgetTopHeight(btnClose, 286.0, Unit.PX, 40.0, Unit.PX);
+						btnClose.addClickHandler(new ClickHandler() {
+							public void onClick(ClickEvent event) {
+								createEventPanel.clear();
+							}
+						});
 			}
 			});
 		
